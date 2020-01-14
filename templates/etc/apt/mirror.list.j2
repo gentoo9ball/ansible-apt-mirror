@@ -5,6 +5,10 @@ set base_path    {{ apt_mirror_dir }}
 set base_path    /var/spool/apt-mirror
 {% endif %}
 
+{% if apt_mirror_nocertcheck is defined %}
+set no-check-certificate     {{ apt_mirror_nocertcheck }}
+{% endif %}
+
 {% if apt_mirror_nthreads is defined %}
 set nthreads     {{ apt_mirror_nthreads }}
 {% elif apt_mirror_nthreads is not defined %}
