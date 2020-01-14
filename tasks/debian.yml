@@ -6,3 +6,7 @@
   become: true
   with_items:
     - apt-mirror
+- name: debian | update apt-mirror with custom script
+  get_url:
+    url: https://raw.githubusercontent.com/gentoo9ball/apt-mirror/master/apt-mirror
+    dest: /usr/bin/apt-mirror
