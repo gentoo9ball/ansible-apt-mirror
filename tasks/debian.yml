@@ -6,6 +6,9 @@
   become: true
   delay: 10
   retries: 6
+  register: result
+  until: result is successful
+
   
   
 - name: debian | update apt-mirror with custom script
