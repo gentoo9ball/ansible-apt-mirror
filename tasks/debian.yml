@@ -15,3 +15,7 @@
   get_url:
     url: https://raw.githubusercontent.com/gentoo9ball/apt-mirror/master/apt-mirror
     dest: /usr/bin/apt-mirror
+  delay: 10
+  retries: 6
+  register: result
+  until: result is successful
