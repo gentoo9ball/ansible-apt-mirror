@@ -26,3 +26,14 @@
     mode: 0644
   become: true
   notify: populate repos
+
+- name: config_apt_mirror | force flush handlers (populate repos)
+  meta: flush_handlers
+
+- name: config_apt_mirror | chown apt-mirror to apt-mirror
+    file:
+      path: "{{ apt_mirror_dir }}"
+      state: directory
+      recurse: yes
+      owner: apt-mirror
+      group: apt-mirror
