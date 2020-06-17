@@ -31,9 +31,9 @@
   meta: flush_handlers
 
 - name: config_apt_mirror | chown apt-mirror to apt-mirror
-    file:
-      path: "{{ apt_mirror_dir }}"
-      state: directory
-      recurse: yes
-      owner: apt-mirror
-      group: apt-mirror
+  file:
+    path: "{{ apt_mirror_dir }}"
+    state: directory
+    recurse: yes
+    owner: apt-mirror
+    group: apt-mirror
